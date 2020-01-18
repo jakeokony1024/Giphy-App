@@ -19,25 +19,40 @@ function createButtons(searchArr, classToAdd, addToArea){
 }
 
 $(document).on("click", ".searchButton", function(){
+    $("#searches").empty();
     var type = $(this).data("type");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q="+type + "&api_key=m9tSf30kxYQiLtxv4XPexvkHgzMwvhtN&limit=10";
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).done(function(response){
+    }).then(function(response){
         for (var i=0; i<response.data.length;i++){
            var searchDiv = $("<div class='search-item'>");
            var rating = response.data[i].rating;
            var p = $("<p>").text("Rating: "+rating);
            var animated = response.data[i].images.fixed_height.url;
            var still = response.data[i].images.fixed_height_still.url;
-           var image = ("<img>");
+           var image = $("<img>");
            image.attr("src", still);
+           image.attr("data-still",still);
+           image.attr("data-animated", animated);
+           image.attr("data-state", "still");
+           image.addClass("searchImg");
+           searchDiv.append(p);
+           searchDiv.append(image);
+           $("#searches").append(searchDiv);
             
         }
 
     })
 
-});
+})
+
+$("#addSearch").on("click", function(){
+    var newSearch = $("input").eq(0).val();
+    searchArr.push(newSearch);
+    createButtons(searchArr, "searchButton", "#buttonsArea");
+    return false;
+})
 
 
