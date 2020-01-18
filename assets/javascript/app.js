@@ -26,6 +26,7 @@ $(document).on("click", ".searchButton", function(){
         url: queryURL,
         method: "GET"
     }).then(function(response){
+        console.log(response);
         for (var i=0; i<response.data.length;i++){
            var searchDiv = $("<div class='search-item'>");
            var rating = response.data[i].rating;
@@ -48,10 +49,21 @@ $(document).on("click", ".searchButton", function(){
 
 })
 
+$(document).on("click", ".searchImg", function(){
+    var state = $(this).data("state");
+    if (state == "still"){
+        $(this).attr("src", $(this).data("animated"));
+        $(this).attr("data-state", "animated");
+    } else {
+        $(this).attr("src", $(this).data("still"));
+        $(this).attr("data-state", "still");
+    }
+})
+
 $("#addSearch").on("click", function(){
     var newSearch = $("input").eq(0).val();
     searchArr.push(newSearch);
-    createButtons(searchArr, "searchButton", "#buttonsArea");
+    createButtons(searchArr, "searchButton", "#buttons");
     return false;
 })
 
