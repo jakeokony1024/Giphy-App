@@ -6,6 +6,7 @@ $(function(){
 
 var searchArr = ["Batman", "Superman", "Spider-Man", "Aqua-Man", "Robin", "Joker", "Lex Luthor", "Thor", "Hulk", "Captain America"];
 
+//function to create buttons from array//
 function createButtons(searchArr, classToAdd, addToArea){
     $(addToArea).empty();
     for (var i=0; i<searchArr.length;i++){
@@ -16,3 +17,11 @@ function createButtons(searchArr, classToAdd, addToArea){
         $(addToArea).append(a);
     }
 }
+
+$(document).on("click", ".searchButton", function(){
+    var type = $(this).data("type");
+    console.log(type);
+
+})
+
+
