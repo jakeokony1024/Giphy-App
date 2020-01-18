@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Giphy App</title>
 </head>
+
 <body>
-    <div id="buttons"></div>
-    <form id="search"><label for="search-input">Add your search!</label>
-    <input type="text" id="search-input"> <br>
-    <input type="submit" value="Submit">
-     </form>
-
-    <div id="searches"></div>
-
-        <script type="text/javascript" src="./assets/javascript/app.js"></script>
+    <div id="wrapper">
+            <div id="buttons"></div>
+            <div id="searchBox">
+                <form id="search"><label for="search-input">Add your search!</label>
+                    <input type="text" id="search-input">
+                    <br>
+                    <input id="addSearch" type="submit" value="Submit">
+                </form>
+            </div>
+        
+            <div id="searches"></div>
+        
+    </div>
+    <script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>
+
 </html>
