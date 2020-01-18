@@ -38,7 +38,7 @@ $(document).on("click", ".searchButton", function(){
            image.attr("data-still",still);
            image.attr("data-animated", animated);
            image.attr("data-state", "still");
-           image.addClass("searchImg");
+           image.addClass("searchImage");
            searchDiv.append(p);
            searchDiv.append(image);
            $("#searches").append(searchDiv);
@@ -49,8 +49,8 @@ $(document).on("click", ".searchButton", function(){
 
 })
 
-$(document).on("click", ".searchImg", function(){
-    var state = $(this).data("state");
+$(document).on("click", ".searchImage", function(){
+    var state = $(this).attr("data-state");
     if (state == "still"){
         $(this).attr("src", $(this).data("animated"));
         $(this).attr("data-state", "animated");
@@ -61,6 +61,7 @@ $(document).on("click", ".searchImg", function(){
 })
 
 $("#addSearch").on("click", function(){
+    
     var newSearch = $("input").eq(0).val();
     searchArr.push(newSearch);
     createButtons(searchArr, "searchButton", "#buttons");
