@@ -4,6 +4,11 @@ body {
     background-color: #eee;
 
 }
+#directions{
+    text-align: center;
+    color:#659a65;
+   margin-bottom: 40px;
+}
 
 #searches {
     width: 70%;
