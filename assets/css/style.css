@@ -5,18 +5,51 @@ body {
 
 }
 #directions{
+    display: flex;
+    justify-content: center;
     text-align: center;
     color:#659a65;
-   margin-bottom: 40px;
+   margin: 40px;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #searches {
-    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 85%;
 }
 
 .search-item {
-    float: left;
+    border: 2px solid #659a65;
     padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    object-fit: fill;
+    height: auto;
+    width: auto;
+    margin: 10px;
+    flex-basis: 25%;
+    
+}
+
+.searchImage {
+    object-fit: contain;
 }
 
 form {
@@ -84,7 +117,7 @@ button.active {
 
 
     }
-
+/* 
     .searchImage {
 
         display: inline-block;
@@ -92,6 +125,6 @@ button.active {
         width: 100%;
         height: 100%x;
 
-    }
+    } */
 
 }
